@@ -59,6 +59,19 @@ instance_groups:
   stemcell: default
   networks:
   - name: default
+- name: nexus
+  azs:
+  - z1
+  instances: 1
+  jobs:
+  - name: nexus
+    release: buildstack
+  vm_type: default
+  vm_extensions: [internet-required]
+  persistent_disk_pool: 100GB
+  stemcell: default
+  networks:
+  - name: default
 
 variables:
 - name: jenkins_admin_password
